@@ -11,6 +11,7 @@ endif
 autocmd!
 
 syntax enable
+set number "this makes vim show line numbers
 set history=25
 set showmode
 set showcmd
