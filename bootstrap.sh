@@ -6,7 +6,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 
     if hash pacman 2>/dev/null; then
         echo "You have pacman installed. Installing packages."
-        pacman -Ss vim build-essential git irssi vim zsh
+        sudo pacman -Sy --needed vim git irssi vim zsh
     else
         echo "I have no idea what you're running for Linux! Aborting"
         exit 1
@@ -34,7 +34,7 @@ echo "Setting up vim"
 [[ -d $HOME/.vim/bundle ]] || mkdir -v $HOME/.vim/bundle
 
 echo "Setting up Vundle"
-[[ -d $HOME/.vim/bundle/Vundle.vim ]] || git clone https://github.com/gmark/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
+[[ -d $HOME/.vim/bundle/Vundle.vim ]] || git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 
 echo "Copying and clobbering vim configurations."
 cp -v vim/colors/* $HOME/.vim/colors
@@ -46,7 +46,7 @@ cp -v zsh/zshrc ~/.zshrc
 [[ -d $HOME/.oh-my-zsh ]] || curl -L http://install.ohmyz.sh | sh
 
 # themes themes themes
-cp -v zshrc/oh-my-zsh-themes/* ~/.oh-my-zsh/themes
+cp -v zsh/oh-my-zsh-themes/* ~/.oh-my-zsh/themes
 
 # Run vim's vundle installer
 vim +PluginInstall +qall
