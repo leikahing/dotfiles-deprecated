@@ -18,8 +18,6 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'tpope/vim-surround'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'Lokaltog/powerline'
 
 call vundle#end()
 
