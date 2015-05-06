@@ -25,6 +25,10 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     brew update
     brew install coreutils git gnu-tar zsh gawk gnu-sed python findutils tmux
 
+elif [[ "$OSTYPE" == "cygwin"* ]]; then
+    if hash pact 2>/dev/null; then
+        echo "You are running cygwin inside babun?"
+    fi
 fi
 
 # do vim stuff
